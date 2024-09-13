@@ -9,7 +9,7 @@ const Signup = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [image, setImage] = useState(null); // State for image
-  const { signup } = useContext(AuthContext);
+  // const { signup } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {

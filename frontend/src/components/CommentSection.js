@@ -62,7 +62,8 @@ const CommentSection = ({ blogId }) => {
   const handleReplySubmit = async (e, commentId) => {
     e.preventDefault();
     try {
-      const updatedComment = await replyOnComment(commentId, { text: reply.text });
+      // const updatedComment = 
+      await replyOnComment(commentId, { text: reply.text });
       const { data } = await fetchBlog(blogId);
       setComments(data.comments);
       setReply({ id: '', text: '' });
