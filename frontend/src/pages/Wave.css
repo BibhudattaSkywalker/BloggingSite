@@ -1,0 +1,24 @@
+.bg-wave-pattern {
+    background-image: url('https://t4.ftcdn.net/jpg/06/26/57/75/360_F_626577500_SkdU1LpQsy5pdQTp17DU8no8SsFoiPnD.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .clip-wave {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  }
+  
+  .animate-wave {
+    animation: wave 10s infinite linear;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
