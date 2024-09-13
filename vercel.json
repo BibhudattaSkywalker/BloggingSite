@@ -1,24 +1,25 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "blogpost/server.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "frontend/**/*",
-        "use": "@vercel/static"
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/build"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/blogpost/server.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/frontend/$1"
-      }
-    ]
-  }
-  
+    },
+    {
+      "src": "blogpost/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "build": {
+    "env": {
+      "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/blogpost/api/$1" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
+  ]
+}
