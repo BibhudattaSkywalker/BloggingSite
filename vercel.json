@@ -13,8 +13,13 @@
       "use": "@vercel/node"
     }
   ],
-  
+  "build": {
+    "env": {
+      "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+    }
+  },
   "routes": [
-    { "src": "/api/(.*)", "dest": "/blogpost/api/$1" }
+    { "src": "/api/(.*)", "dest": "/blogpost/api/$1" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
   ]
 }
