@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     );
     next();
 });
-app.get('/t', (req, res) => {
+app.get('/', (req, res) => {
     res.send('APIs SERVER is perfectly working..');
 
     res.json({
