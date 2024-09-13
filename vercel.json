@@ -18,12 +18,8 @@
       "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
     }
   },
-  
   "routes": [
     { "src": "/api/(.*)", "dest": "/blogpost/api/$1" },
-    { "src": "/(.*)", "dest": "/frontend/$1" },
-    {
-      "installCommand": "npm install --legacy-peer-deps"
-    }
+    { "src": "/(.*)", "dest": "/frontend/$1" }
   ]
 }
