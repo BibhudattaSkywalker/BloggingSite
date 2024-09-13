@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "blogpost/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "blogs/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/blogpost/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/blogs/$1"
+      }
+    ]
+  }
+  

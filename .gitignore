@@ -1,0 +1,6 @@
+# Ignore environment variable files
+*.env
+
+# Ignore node_modules directories
+blogs/node_modules/
+blogpost/node_modules/
