@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:3001/api/auth' });
+const API = axios.create({ baseURL: 'https://blogging-site-41xl.vercel.app/api/auth' });
 
 // Interceptor to add the token to headers
 API.interceptors.request.use((req) => {

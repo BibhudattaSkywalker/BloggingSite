@@ -28,7 +28,7 @@ const Signup = () => {
       if (image) formData.append('image', image);
 
       // Submit form data
-      const response = await axios.post('http://localhost:3001/api/signup', formData, {
+      const response = await axios.post('https://blogging-site-41xl.vercel.app/api/signup', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

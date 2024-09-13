@@ -10,6 +10,26 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //routes
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET, HEAD, OPTIONS, POST, PUT, DELETE"
+    );
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    next();
+});
+app.get('/', (req, res) => {
+    res.send('APIs SERVER is perfectly working..');
+
+    res.json({
+        message: 'Welcome to the API',
+        api_version: '1.0',
+    });
+});
 app.use('/api',userRoutes);
 app.use('/api/auth',blogRoutes);
 

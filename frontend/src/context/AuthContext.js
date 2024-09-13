@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (email, password) => {
-    const response = await axios.post('http://localhost:3001/api/login', { email, password });
+    const response = await axios.post('https://blogging-site-41xl.vercel.app/api/login', { email, password });
     const { token, user } = response.data;
     setToken(token);
     setUser(user);
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = async (name, email, phoneNumber, password) => {
-    const response = await axios.post('http://localhost:3001/api/signup', { name, email, phoneNumber, password });
+    const response = await axios.post('https://blogging-site-41xl.vercel.app/api/signup', { name, email, phoneNumber, password });
     const { token, user } = response.data;
     setToken(token);
     setUser(user);
